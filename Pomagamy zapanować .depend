@@ -1,0 +1,329 @@
+# depslib dependency file v1.0
+1303067212 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1303067212 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1630232796 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\main.cpp
+	<iostream>
+	"Markup.h"
+
+1632077083 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\main.cpp
+	<iostream>
+	<windows.h>
+	<vector>
+	"Markup.h"
+	"Finance.h"
+	"FileWithUser.h"
+	"IncomesMenager.h"
+	"Users.h"
+
+1303067212 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1632054968 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\usersmenager.cpp
+	"UsersMenager.h"
+	"FileWithUser.h"
+
+1631473718 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\users.cpp
+	"Users.h"
+
+1631473718 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\users.h
+	<iostream>
+
+1632054968 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\usersmenager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"Users.h"
+	"FileWithUser.h"
+
+1632074149 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\finance.cpp
+	"Finance.h"
+
+1632074149 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\finance.h
+	<iostream>
+	<vector>
+	"Users.h"
+	"UsersMenager.h"
+	"IncomesMenager.h"
+	"ExpensesMenager.h"
+
+1631389701 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\incomes.cpp
+	"Incomes.h"
+
+1632063698 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithuser.cpp
+	"FileWithUser.h"
+
+1632069354 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithuser.h
+	<iostream>
+	<vector>
+	"Users.h"
+	"Markup.h"
+
+1303067212 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1632074604 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\incomesmenager.cpp
+	"IncomesMenager.h"
+
+1631388818 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\incomes.h
+	<iostream>
+
+1632074272 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\incomesmenager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<winbase.h>
+	"Users.h"
+	"HelpsMethods.h"
+	"Incomes.h"
+	"FileWithIncomes.h"
+	"UsersMenager.h"
+
+1632660199 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\helpsmethods.cpp
+	"Helpsmethods.h"
+
+1632661488 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\helpsmethods.h
+	<iostream>
+	<windows.h>
+	<winbase.h>
+	<string>
+	<stdlib.h>
+
+1632066445 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithincomes.cpp
+	"fileWithIncomes.h"
+
+1632062071 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithincomes.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	"Incomes.h"
+
+1631393302 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expansesmenager.cpp
+	"ExpansesMenager.h"
+
+1631393367 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithexpanses.cpp
+	"FileWithExpanses.h"
+
+1631393172 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expanses.cpp
+	"Expanses.h"
+
+1631393295 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expanses.h
+	<iostream>
+
+1631393367 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expansesmenager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<winbase.h>
+	"Users.h"
+	"HelpsMethods.h"
+	"Incomes.h"
+	"FileWithIncomes.h"
+
+1631393367 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithexpanses.h
+	<iostream>
+	"Markup.h"
+	"Incomes.h"
+
+1632650518 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expenses.cpp
+	"Expenses.h"
+
+1632650502 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expenses.h
+	<iostream>
+
+1632650553 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithexpenses.cpp
+	"FileWithExpenses.h"
+
+1632075530 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\filewithexpenses.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	"Expenses.h"
+
+1632650848 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expensesmenager.cpp
+	"ExpensesMenager.h"
+
+1632170514 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\pomagamy zapanowaæ\expensesmenager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<cstdlib>
+	<ctime>
+	<utility>
+	<bits/stdc++.h>
+	"Users.h"
+	"HelpsMethods.h"
+	"Expenses.h"
+	"FileWithExpenses.h"
+
+1632689120 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\expenses.cpp
+	"Expenses.h"
+
+1632688925 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\expenses.h
+	<iostream>
+
+1632670261 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\expensesmenager.cpp
+	"ExpensesMenager.h"
+
+1632668286 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\expensesmenager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<cstdlib>
+	<ctime>
+	<utility>
+	<bits/stdc++.h>
+	"Users.h"
+	"HelpsMethods.h"
+	"Expenses.h"
+	"FileWithExpenses.h"
+
+1632661580 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\users.h
+	<iostream>
+
+1632661580 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.h
+	<iostream>
+	<windows.h>
+	<winbase.h>
+	<string>
+	<stdlib.h>
+
+1632672101 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithexpenses.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	"Expenses.h"
+
+1632661580 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1632683415 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithexpenses.cpp
+	"FileWithExpenses.h"
+
+1632684020 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithincomes.cpp
+	"fileWithIncomes.h"
+
+1632673477 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithincomes.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	"Incomes.h"
+
+1632688657 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\incomes.h
+	<iostream>
+
+1632674726 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithuser.cpp
+	"FileWithUser.h"
+
+1632674661 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithuser.h
+	<iostream>
+	<vector>
+	"Users.h"
+	"Markup.h"
+
+1632686975 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\finance.cpp
+	"Finance.h"
+
+1632686199 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\finance.h
+	<iostream>
+	<vector>
+	"UsersMenager.h"
+	"TransactionMenager.h"
+
+1632683135 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\usersmenager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"Users.h"
+	"FileWithUser.h"
+
+1632661580 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\incomesmenager.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<winbase.h>
+	"Users.h"
+	"HelpsMethods.h"
+	"Incomes.h"
+	"FileWithIncomes.h"
+	"UsersMenager.h"
+
+1632661580 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.cpp
+	"Helpsmethods.h"
+
+1632689407 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\incomes.cpp
+	"Incomes.h"
+
+1632661580 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\incomesmenager.cpp
+	"IncomesMenager.h"
+
+1632687047 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\main.cpp
+	<iostream>
+	<windows.h>
+	<vector>
+	"Markup.h"
+	"Finance.h"
+	"FileWithUser.h"
+	"Users.h"
+
+1632661580 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1632661580 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\users.cpp
+	"Users.h"
+
+1632682701 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\usersmenager.cpp
+	"UsersMenager.h"
+
+1632668604 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transcation.cpp
+	"Transcation.h"
+
+1632668604 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transcation.h
+	<iostream>
+
+1632690225 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.cpp
+	"TransactionMenager.h"
+
+1632689483 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<functional>
+	"Expenses.h"
+	"Incomes.h"
+	"FileWithExpenses.h"
+	"FileWithIncomes.h"
+	"Users.h"
+	"HelpsMethods.h"
+
