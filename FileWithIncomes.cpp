@@ -26,7 +26,7 @@ CMarkup xml;
 }
 
 
-vector<Incomes> FileWithIncomes::loadIncomesFromFile(){
+vector<Incomes> FileWithIncomes::loadIncomesFromFile(int loggedUserId){
 
 Incomes incomes;
 vector<Incomes> Income;
@@ -41,6 +41,12 @@ vector<Incomes> Income;
     xml.IntoElem();
     xml.FindElem("UserId");
         int intUserId = atoi(MCD_2PCSZ(xml.GetData()));
+        if(loggedUserId == intUserId){
+        incomes.setUserId(intUserId);
+        }else{
+        xml.RestorePos();
+        continue;
+        }
         xml.FindElem("IncomeId");
         int intIncomeId = atoi(MCD_2PCSZ(xml.GetData()));
         xml.FindElem("Date");
@@ -51,7 +57,8 @@ vector<Incomes> Income;
         MCD_STR strAmount = xml.GetData();
         xml.OutOfElem();
 
-        incomes.setUserId(intUserId);
+
+
         incomes.setIncomeId(intIncomeId);
         incomes.setDate(intDate);
         incomes.setItem(strItem);

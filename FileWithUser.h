@@ -20,6 +20,7 @@ public:
     FileWithUser(string nameOfFileWithUser);
     void addUserToFile(Users users);
     vector<Users> LoadUsersFromFile();
+    void saveUserAfterChangingPassword(int id, string password);
 
 
 

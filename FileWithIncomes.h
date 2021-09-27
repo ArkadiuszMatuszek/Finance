@@ -17,7 +17,7 @@ const string INCOMES_FILENAME;
 public:
 FileWithIncomes(string nameOfFileWithIncomes);
 void addIncomesToFile(Incomes incomes);
-vector<Incomes> loadIncomesFromFile();
+vector<Incomes> loadIncomesFromFile(int loggedUserId);
 
 
 };

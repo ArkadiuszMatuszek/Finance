@@ -28,7 +28,7 @@ CMarkup xml;
     xml.Save(EXPENSES_FILENAME);
 }
 
-vector<Expense> FileWithExpenses::loadExpensesFromFile(){
+vector<Expense> FileWithExpenses::loadExpensesFromFile(int loggedUserId){
 
 Expense expense;
 vector<Expense> Expens;
@@ -45,6 +45,12 @@ xml.FindElem("Users");
     xml.IntoElem();
     xml.FindElem("UserId");
         int intUserId = atoi(MCD_2PCSZ(xml.GetData()));
+        if(loggedUserId == intUserId){
+        expense.setUserId(intUserId);
+        }else{
+        xml.RestorePos();
+        continue;
+        }
         xml.FindElem("ExpenseId");
         int intExpenseId = atoi(MCD_2PCSZ(xml.GetData()));
         xml.FindElem("Date");

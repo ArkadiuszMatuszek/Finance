@@ -22,6 +22,7 @@ class TransactionMenager{
 const int LOGGED_USER_ID;
 vector<Expense> expense;
 vector<Incomes> income;
+vector<Incomes> newIncome;
 FileWithExpenses fileWithExpenses;
 FileWithIncomes fileWithIncomes;
 HelpsMethods helpsmethods;
@@ -31,7 +32,7 @@ public:
 TransactionMenager(string nameOfFileWithExpenses, string nameOfFileWithIncomes, int loggedUserId);
 void addIncomes();
 void AddNewExpenses();
-void getBalance(int firstDate, int secondDate);
+void getBalanceFromPeriod();
 void getBallanceFromCurrentMonth();
 void getBalanceFromLastMonth();
 void getBalanceCustom();
@@ -39,10 +40,9 @@ void ExpensesFromToday();
 void ExpensesFromAnotherDay();
 int downloadIdForNewExpenses();
 int downloadIdForNewIncomes();
-void showAllExpenses();
-void showAllIncomes();
 vector<Incomes> sortIncomesFromGreater(vector<Incomes> tempIncomes);
 vector<Expense> sortExpensesFromGreater(vector<Expense> tempExpenses);
+
 
 
 

@@ -52,7 +52,7 @@
 <User>
 <UserId>8</UserId>
 <Login>arek</Login>
-<Password>arek</Password>
+<Password>kupa</Password>
 <Name>arek</Name>
 <Surname>arek</Surname>
 </User>
@@ -87,14 +87,14 @@
 <User>
 <UserId>12</UserId>
 <Login>malpeczka</Login>
-<Password>malpeczka</Password>
+<Password>arkomat</Password>
 <Name>das</Name>
 <Surname>das</Surname>
 </User>
 <User>
 <UserId>13</UserId>
 <Login>aaa</Login>
-<Password>aaa</Password>
+<Password>koparka</Password>
 <Name>aaa</Name>
 <Surname>aaa</Surname>
 </User>

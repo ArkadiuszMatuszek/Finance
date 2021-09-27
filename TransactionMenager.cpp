@@ -3,8 +3,8 @@
 
 TransactionMenager::TransactionMenager(string nameOfFileWithExpenses, string nameOfFileWithIncomes, int loggedUserId):
     fileWithExpenses(nameOfFileWithExpenses), fileWithIncomes(nameOfFileWithIncomes), LOGGED_USER_ID(loggedUserId) {
-    expense=fileWithExpenses.loadExpensesFromFile();
-    income=fileWithIncomes.loadIncomesFromFile();
+    expense=fileWithExpenses.loadExpensesFromFile(LOGGED_USER_ID);
+    income=fileWithIncomes.loadIncomesFromFile(LOGGED_USER_ID);
 }
 
 void TransactionMenager::AddNewExpenses() {
@@ -104,68 +104,183 @@ int TransactionMenager::downloadIdForNewIncomes() {
         return income.back().downloadIncomeId()+1;
 }
 
-void TransactionMenager::getBallanceFromCurrentMonth(){
+void TransactionMenager::getBallanceFromCurrentMonth() {
 
     vector<Incomes> tempIncomes;
     vector<Expense> tempExpenses;
-    int date, i;
-    date = helpsmethods.ConvestationActualDateFromStringToInt();
+    int date, i, finishDate;
+    double sumOfIncomesAmount = 0.0;
+    double sumOfExpensesAmount = 0.0;
+    double IncomesMinusExpenses = 0.0;
+
 
     tempIncomes = sortIncomesFromGreater(tempIncomes);
+    tempExpenses = sortExpensesFromGreater(tempExpenses);
 
 
-    cout << tempIncomes.size() << endl;
-    vector<Incomes>::iterator itr;
+    date = helpsmethods.ConvestationActualDateFromStringToInt();
+    finishDate = helpsmethods.getDateToBilanceFromCurentMonth();
 
-    for(int i=0; i<tempIncomes.size(); i++){
-            if(i<tempIncomes.size() && tempIncomes[i].downloadDate() >=date ){
+
+    cout << "tempIncomes.size: " << tempIncomes.size() << endl;
+    cout << "tempExpensesSize: " << tempExpenses.size() << endl;
+
+
+    for(int i=tempIncomes.size(); i>0; i--) {
+        if(tempIncomes[i].downloadDate() >=finishDate && tempIncomes[i].downloadDate() <=date) {
             cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
             cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
             cout << "Wartosc wplywu to: " << tempIncomes[i].downloadAmount() << endl;
-            }
+            cout << endl;
+            sumOfIncomesAmount += helpsmethods.stringNaDouble(tempIncomes[i].downloadAmount());
+        }
 
     }
 
-}
 
 
-void TransactionMenager::showAllExpenses(){
 
-    for(int i=0; i<expense.size(); i++){
-        cout << expense[i].downloadUserId() << endl;
-        cout << expense[i].downloadAmount() << endl;
-        cout << expense[i].downloadDate() << endl;
-        cout << expense[i].downloadItem() << endl;
-        cout << expense[i].downloadExpenseId() << endl;
-    }
-
-}
-
-void TransactionMenager::showAllIncomes(){
-
-    for(int i=0; i<income.size(); i++){
-        cout << income[i].downloadUserId() << endl;
-        cout << income[i].downloadAmount() << endl;
-        cout << income[i].downloadDate() << endl;
-        cout << income[i].downloadItem() << endl;
-        cout << income[i].downloadIncomeId() << endl;
+    for(int i=tempExpenses.size(); i>0; i--) {
+        if(tempExpenses[i].downloadDate() >=finishDate && tempExpenses[i].downloadDate() <=date) {
+            cout << "Data to: " << tempExpenses[i].downloadDate() << endl;
+            cout << "Nazwa wydatku to: " << tempExpenses[i].downloadItem() << endl;
+            cout << "Wartosc wydatku to: " << tempExpenses[i].downloadAmount() << endl;
+            cout << endl;
+            sumOfExpensesAmount += helpsmethods.stringNaDouble(tempExpenses[i].downloadAmount());
+        }
 
     }
+    cout << "sumOfIncomesAmount: " <<  sumOfIncomesAmount << endl;
+    cout << endl;
+    cout << "sumOfExpensesAmount: " <<  sumOfExpensesAmount << endl;
+    cout << endl;
+
+    IncomesMinusExpenses = helpsmethods.IncomesMinusExpenses(sumOfIncomesAmount,sumOfExpensesAmount);
+
+    cout << "IncomesMinusExpenses: " << IncomesMinusExpenses << endl;
+    system("pause");
+
+
+
+
+
+
+
+
 
 }
 
-vector <Incomes> TransactionMenager::sortIncomesFromGreater(vector<Incomes> tempIncomes){
+void TransactionMenager::getBalanceFromLastMonth() {
+
+    vector<Incomes> tempIncomes;
+    vector<Expense> tempExpenses;
+    int date, finishDate;
+    double sumOfIncomesAmount = 0.0;
+    double sumOfExpensesAmount = 0.0;
+    double IncomesMinusExpenses = 0.0;
+
+
+    tempIncomes = sortIncomesFromGreater(tempIncomes);
+    tempExpenses = sortExpensesFromGreater(tempExpenses);
+
+    date = helpsmethods.backActualDateOneMonth();
+    finishDate = helpsmethods.getDateToBilanceFromPreviouslyMonth();
+
+    cout <<"startDate: " <<  date << endl;
+    cout <<"finishDate: " <<  finishDate << endl;
+
+
+
+
+    for(int i=tempIncomes.size(); i>0; i--) {
+        if(tempIncomes[i].downloadDate() >=finishDate && tempIncomes[i].downloadDate() <=date) {
+            cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
+            cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
+            cout << "Wartosc wplywu to: " << tempIncomes[i].downloadAmount() << endl;
+            cout << endl;
+            sumOfIncomesAmount += helpsmethods.stringNaDouble(tempIncomes[i].downloadAmount());
+        }
+
+    }
+
+    for(int i=tempExpenses.size(); i>0; i--) {
+        if(tempExpenses[i].downloadDate() >=finishDate && tempExpenses[i].downloadDate() <=date) {
+            cout << "Data to: " << tempExpenses[i].downloadDate() << endl;
+            cout << "Nazwa wydatku to: " << tempExpenses[i].downloadItem() << endl;
+            cout << "Wartosc wydatku to: " << tempExpenses[i].downloadAmount() << endl;
+            cout << endl;
+            sumOfExpensesAmount += helpsmethods.stringNaDouble(tempExpenses[i].downloadAmount());
+        }
+
+    }
+
+
+
+
+}
+
+void TransactionMenager::getBalanceFromPeriod() {
+
+    vector<Incomes> tempIncomes;
+    vector<Expense> tempExpenses;
+    int firstDate;
+    int secondDate;
+    double sumOfIncomesAmount = 0;
+    double sumOfExpensesAmount = 0;
+    double IncomesMinusExpenses = 0;
+
+    tempIncomes = sortIncomesFromGreater(tempIncomes);
+    tempExpenses = sortExpensesFromGreater(tempExpenses);
+
+    cout << "Please insert date from which period: " << endl;
+    firstDate = helpsmethods.ConvestationChoosedDateFromStringToInt();
+    cout << "Please insert date to which period: " << endl;
+    secondDate = helpsmethods.ConvestationChoosedDateFromStringToInt();
+
+
+
+    cout << "firstDate: " << firstDate << endl;
+    cout << "secondDate: " << secondDate << endl;
+    cout << "tempIncomesSize: " << tempIncomes.size() << endl;
+    cout << "tempExpensesSize: " << tempExpenses.size() << endl;
+
+    for(int i=tempIncomes.size(); i>0; i--) {
+        if(tempIncomes[i].downloadDate() <=secondDate && tempIncomes[i].downloadDate() >=firstDate) {
+            cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
+            cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
+            cout << "Wartosc wplywu to: " << tempIncomes[i].downloadAmount() << endl;
+            cout << endl;
+            sumOfIncomesAmount += helpsmethods.stringNaDouble(tempIncomes[i].downloadAmount());
+        }
+    }
+
+    for(int i=tempExpenses.size(); i>0; i--) {
+        if(tempExpenses[i].downloadDate() <=secondDate && tempExpenses[i].downloadDate() >=firstDate) {
+            cout << "Data to: " << tempExpenses[i].downloadDate() << endl;
+            cout << "Nazwa wplywu to: " << tempExpenses[i].downloadItem() << endl;
+            cout << "Wartosc wplywu to: " << tempExpenses[i].downloadAmount() << endl;
+            cout << endl;
+            sumOfExpensesAmount += helpsmethods.stringNaDouble(tempExpenses[i].downloadAmount());
+        }
+    }
+
+
+
+}
+
+vector <Incomes> TransactionMenager::sortIncomesFromGreater(vector<Incomes> tempIncomes) {
     tempIncomes = income;
     sort(tempIncomes.begin(), tempIncomes.end(), greater<Incomes>());
     return tempIncomes;
 
 }
 
-vector<Expense> TransactionMenager::sortExpensesFromGreater(vector<Expense> tempExpenses){
+vector<Expense> TransactionMenager::sortExpensesFromGreater(vector<Expense> tempExpenses) {
     tempExpenses = expense;
     sort(tempExpenses.begin(), tempExpenses.end(), greater<Expense>());
     return tempExpenses;
 
 }
+
 
 

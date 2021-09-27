@@ -67,9 +67,19 @@ case '2':
     finance.addExpense();
     break;
 case '3':
-    finance.getBalance();
+    finance.getBalanceFromCurrentMonth();
+    break;
+case '4':
+    finance.getBalanceFromCurrentPreviouslyMonth();
+    break;
+case '5':
+    finance.getBalanceFromPeriod();
+    break;
+case '6':
+    finance.passwordChange();
+    break;
 case '7':
-    exit(0);
+    finance.logout();
     }
 
 

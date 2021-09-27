@@ -4,6 +4,7 @@
 
 UserMenager::UserMenager(string nameOfFileWithUser):fileWithUser(nameOfFileWithUser){
 newUsers = fileWithUser.LoadUsersFromFile();
+loggedUserId=0;
 }
 
 void UserMenager::userRegistation() {
@@ -128,6 +129,29 @@ bool UserMenager::isUserLogged(){
     }
 
 }
+
+void UserMenager::passwordChange(){
+string newPassword;
+
+cout << "Please insert new password " << endl;
+cin >> newPassword;
+
+for(vector<Users>::iterator itr = newUsers.begin(); itr!=newUsers.end(); itr++){
+    if(itr-> downloadId() == loggedUserId){
+        itr->setPassword(newPassword);
+        fileWithUser.saveUserAfterChangingPassword(loggedUserId, newPassword);
+    }
+}
+
+}
+
+int UserMenager::logout(){
+    loggedUserId = 0;
+    system("cls");
+    return loggedUserId;
+}
+
+
 
 
 

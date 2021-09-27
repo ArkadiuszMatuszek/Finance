@@ -28,7 +28,11 @@ void saveUsersToFile();
 void addExpense();
 void addIncome();
 bool isUserLogged();
-void getBalance();
+void getBalanceFromCurrentMonth();
+void getBalanceFromCurrentPreviouslyMonth();
+void getBalanceFromPeriod();
+void passwordChange();
+void logout();
 
 
 

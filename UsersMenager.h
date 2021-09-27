@@ -28,6 +28,9 @@ int downloadIdForNewUser();
 Users SetDateForNewUser();
 int downloadIdLoggedUser();
 bool isUserLogged();
+void passwordChange();
+int logout();
+
 
 
 

@@ -7,7 +7,7 @@ void FileWithUser::addUserToFile(Users user){
 
     CMarkup xml;
 
-    bool fileExists = xml.Load("Users.xml");
+    bool fileExists = xml.Load(USERS_FILENAME);
 
     if(!fileExists){
     xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
@@ -62,13 +62,33 @@ vector<Users> FileWithUser::LoadUsersFromFile(){
         users.setSurname(strSurname);
         uzytkownicy.push_back(users);
 
+    }
 
+   return uzytkownicy;
+
+}
+void FileWithUser::saveUserAfterChangingPassword(int id, string password){
+
+    CMarkup xml;
+    bool fileExists = xml.Load(USERS_FILENAME);
+
+
+    if(fileExists){
+        xml.FindElem();
+        xml.IntoElem();
+
+        for(int i=0;i<=id;i++){
+            xml.FindElem();
+        }
+        xml.IntoElem();
+        xml.FindElem("Password");
+        xml.RemoveElem();
+        xml.AddElem("Password", password);
+        xml.Save(USERS_FILENAME);
 
     }
 
 
-
-   return uzytkownicy;
 
 }
 

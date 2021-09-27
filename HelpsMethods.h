@@ -22,6 +22,10 @@ int ConvestationActualDateFromStringToInt();
 int ConvestationChoosedDateFromStringToInt();
 string changeCommaToDot(string amount);
 double stringNaDouble(string num);
+int getDateToBilanceFromCurentMonth();
+int getDateToBilanceFromPreviouslyMonth();
+int backActualDateOneMonth();
+double IncomesMinusExpenses(double a, double b);
 
 };
 

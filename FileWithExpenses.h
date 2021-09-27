@@ -18,7 +18,7 @@ public:
 
 FileWithExpenses(string NameOfExpensesFile);
 void addeExpensesToFile(Expense expense);
-vector<Expense> loadExpensesFromFile();
+vector<Expense> loadExpensesFromFile(int loggedUserId);
 
 
 };

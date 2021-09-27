@@ -33,8 +33,24 @@ bool Finance::isUserLogged(){
     usermenager.isUserLogged();
 }
 
-void Finance::getBalance(){
+void Finance::getBalanceFromCurrentMonth(){
 transactionMenager->getBallanceFromCurrentMonth();
+}
+
+void Finance::getBalanceFromCurrentPreviouslyMonth(){
+transactionMenager->getBalanceFromLastMonth();
+}
+
+void Finance::getBalanceFromPeriod(){
+transactionMenager->getBalanceFromPeriod();
+}
+
+void Finance::passwordChange(){
+usermenager.passwordChange();
+}
+
+void Finance::logout(){
+usermenager.logout();
 }
 
 
