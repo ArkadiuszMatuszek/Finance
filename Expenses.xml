@@ -14,4 +14,11 @@
 <Item>arek</Item>
 <Amount>104.5</Amount>
 </User>
+<User>
+<UserId>8</UserId>
+<ExpenseId>3</ExpenseId>
+<Date>20210927</Date>
+<Item>areczek</Item>
+<Amount>123.4</Amount>
+</User>
 </Users>

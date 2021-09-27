@@ -114,17 +114,20 @@ void TransactionMenager::getBallanceFromCurrentMonth(){
     tempIncomes = sortIncomesFromGreater(tempIncomes);
 
 
+    cout << tempIncomes.size() << endl;
+    vector<Incomes>::iterator itr;
 
-    while(i<tempIncomes.size() && tempIncomes[i].downloadDate() <=date){
-            cout << "jestem tutaj " << endl;
-            cout << tempIncomes[i].downloadDate() << endl;
-            cout << tempIncomes[i].downloadItem() << endl;
-            cout << tempIncomes[i].downloadAmount() << endl;
+    for(int i=0; i<tempIncomes.size(); i++){
+            if(i<tempIncomes.size() && tempIncomes[i].downloadDate() >=date ){
+            cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
+            cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
+            cout << "Wartosc wplywu to: " << tempIncomes[i].downloadAmount() << endl;
+            }
 
-   }
-
+    }
 
 }
+
 
 void TransactionMenager::showAllExpenses(){
 

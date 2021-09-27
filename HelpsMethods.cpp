@@ -27,7 +27,7 @@ double HelpsMethods::stringNaDouble(string num) {
 
 int HelpsMethods::ConvestationActualDateFromStringToInt() {
 
-    string date, dateY, dateM, dateD;
+    string date, dateY, dateM, newDateM, dateMM, dateD, newDateD, dateDD;
     int newDate;
 
     SYSTEMTIME time;
@@ -38,7 +38,23 @@ int HelpsMethods::ConvestationActualDateFromStringToInt() {
     dateM = intNaString(time.wMonth);
     dateD = intNaString(time.wDay);
 
-//cout << dateY << dateM << dateD;
+    newDateM = dateM[0];
+    dateMM = dateM[1];
+    newDateD = dateD[0];
+    dateDD = date[1];
+
+    if(StringNaInt(dateM)<=9){
+        newDateM = "0";
+        dateMM = intNaString(time.wMonth);
+        dateM = newDateM+dateMM;
+    }
+
+    if(StringNaInt(dateD)<=9){
+        newDateD = "0";
+        dateDD = intNaString(time.wDay);
+        dateD = newDateD+dateDD;
+    }
+
 
     date = dateY+dateM+dateD;
     newDate = StringNaInt(date);

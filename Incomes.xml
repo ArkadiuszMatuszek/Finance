@@ -28,4 +28,11 @@
 <Item>teatr</Item>
 <Amount>3423</Amount>
 </User>
+<User>
+<UserId>8</UserId>
+<IncomeId>5</IncomeId>
+<Date>20210927</Date>
+<Item>arek</Item>
+<Amount>100</Amount>
+</User>
 </Users>
