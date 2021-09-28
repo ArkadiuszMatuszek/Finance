@@ -27,6 +27,8 @@ FileWithExpenses fileWithExpenses;
 FileWithIncomes fileWithIncomes;
 HelpsMethods helpsmethods;
 
+double showIncomesAndExpenses(vector<Incomes> tempIncomes, vector<Expense> tempExpenses,int secondDate,int firstDate);
+
 public:
 
 TransactionMenager(string nameOfFileWithExpenses, string nameOfFileWithIncomes, int loggedUserId);
