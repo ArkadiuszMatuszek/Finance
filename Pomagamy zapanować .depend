@@ -202,12 +202,13 @@
 1632661580 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\users.h
 	<iostream>
 
-1632771852 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.h
+1632863172 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.h
 	<iostream>
 	<windows.h>
 	<winbase.h>
 	<string>
 	<stdlib.h>
+	<istream>
 
 1632775399 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\filewithexpenses.h
 	<iostream>
@@ -274,7 +275,7 @@
 	"FileWithIncomes.h"
 	"UsersMenager.h"
 
-1632771852 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.cpp
+1632863293 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.cpp
 	"Helpsmethods.h"
 
 1632689407 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\incomes.cpp
@@ -312,7 +313,7 @@
 1632668604 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transcation.h
 	<iostream>
 
-1632775638 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.cpp
+1632858389 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.cpp
 	"TransactionMenager.h"
 
 1632771515 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.h

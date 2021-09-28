@@ -118,15 +118,17 @@ void TransactionMenager::getBallanceFromCurrentMonth() {
     tempExpenses = sortExpensesFromGreater(tempExpenses);
 
 
-    date = helpsmethods.ConvestationActualDateFromStringToInt();
+    date = helpsmethods.getDateToBilanceFromCurrentMonthFinishDate();
     finishDate = helpsmethods.getDateToBilanceFromCurentMonth();
 
 
     cout << "tempIncomes.size: " << tempIncomes.size() << endl;
     cout << "tempExpensesSize: " << tempExpenses.size() << endl;
+    cout << "date : " << date << endl;
+    cout << "finishDate: " << finishDate << endl;
 
 
-    for(int i=tempIncomes.size(); i>0; i--) {
+    for(int i=tempIncomes.size(); i>=0; i--) {
         if(tempIncomes[i].downloadDate() >=finishDate && tempIncomes[i].downloadDate() <=date) {
             cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
             cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
@@ -137,10 +139,7 @@ void TransactionMenager::getBallanceFromCurrentMonth() {
 
     }
 
-
-
-
-    for(int i=tempExpenses.size(); i>0; i--) {
+    for(int i=tempExpenses.size(); i>=0; i--) {
         if(tempExpenses[i].downloadDate() >=finishDate && tempExpenses[i].downloadDate() <=date) {
             cout << "Data to: " << tempExpenses[i].downloadDate() << endl;
             cout << "Nazwa wydatku to: " << tempExpenses[i].downloadItem() << endl;
@@ -192,7 +191,7 @@ void TransactionMenager::getBalanceFromLastMonth() {
 
 
 
-    for(int i=tempIncomes.size(); i>0; i--) {
+    for(int i=tempIncomes.size(); i>=0; i--) {
         if(tempIncomes[i].downloadDate() >=finishDate && tempIncomes[i].downloadDate() <=date) {
             cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
             cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
@@ -203,7 +202,7 @@ void TransactionMenager::getBalanceFromLastMonth() {
 
     }
 
-    for(int i=tempExpenses.size(); i>0; i--) {
+    for(int i=tempExpenses.size(); i>=0; i--) {
         if(tempExpenses[i].downloadDate() >=finishDate && tempExpenses[i].downloadDate() <=date) {
             cout << "Data to: " << tempExpenses[i].downloadDate() << endl;
             cout << "Nazwa wydatku to: " << tempExpenses[i].downloadItem() << endl;
@@ -213,6 +212,16 @@ void TransactionMenager::getBalanceFromLastMonth() {
         }
 
     }
+
+    cout << "sumOfIncomesAmount: " <<  sumOfIncomesAmount << endl;
+    cout << endl;
+    cout << "sumOfExpensesAmount: " <<  sumOfExpensesAmount << endl;
+    cout << endl;
+
+    IncomesMinusExpenses = helpsmethods.IncomesMinusExpenses(sumOfIncomesAmount,sumOfExpensesAmount);
+
+    cout << "IncomesMinusExpenses: " << IncomesMinusExpenses << endl;
+    system("pause");
 
 
 
@@ -244,7 +253,7 @@ void TransactionMenager::getBalanceFromPeriod() {
     cout << "tempIncomesSize: " << tempIncomes.size() << endl;
     cout << "tempExpensesSize: " << tempExpenses.size() << endl;
 
-    for(int i=tempIncomes.size(); i>0; i--) {
+    for(int i=tempIncomes.size(); i>=0; i--) {
         if(tempIncomes[i].downloadDate() <=secondDate && tempIncomes[i].downloadDate() >=firstDate) {
             cout << "Data to: " << tempIncomes[i].downloadDate() << endl;
             cout << "Nazwa wplywu to: " << tempIncomes[i].downloadItem() << endl;
@@ -254,15 +263,25 @@ void TransactionMenager::getBalanceFromPeriod() {
         }
     }
 
-    for(int i=tempExpenses.size(); i>0; i--) {
+    for(int i=tempExpenses.size(); i>=0; i--) {
         if(tempExpenses[i].downloadDate() <=secondDate && tempExpenses[i].downloadDate() >=firstDate) {
             cout << "Data to: " << tempExpenses[i].downloadDate() << endl;
-            cout << "Nazwa wplywu to: " << tempExpenses[i].downloadItem() << endl;
-            cout << "Wartosc wplywu to: " << tempExpenses[i].downloadAmount() << endl;
+            cout << "Nazwa wydatku to: " << tempExpenses[i].downloadItem() << endl;
+            cout << "Wartosc wydatku to: " << tempExpenses[i].downloadAmount() << endl;
             cout << endl;
             sumOfExpensesAmount += helpsmethods.stringNaDouble(tempExpenses[i].downloadAmount());
         }
     }
+
+    cout << "sumOfIncomesAmount: " <<  sumOfIncomesAmount << endl;
+    cout << endl;
+    cout << "sumOfExpensesAmount: " <<  sumOfExpensesAmount << endl;
+    cout << endl;
+
+    IncomesMinusExpenses = helpsmethods.IncomesMinusExpenses(sumOfIncomesAmount,sumOfExpensesAmount);
+
+    cout << "IncomesMinusExpenses: " << IncomesMinusExpenses << endl;
+    system("pause");
 
 
 

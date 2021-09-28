@@ -6,11 +6,14 @@
 #include <winbase.h>
 #include <string>
 #include <stdlib.h>
+#include <istream>
 
 
 using namespace std;
 
 class HelpsMethods{
+
+
 
 public:
 
@@ -26,6 +29,7 @@ int getDateToBilanceFromCurentMonth();
 int getDateToBilanceFromPreviouslyMonth();
 int backActualDateOneMonth();
 double IncomesMinusExpenses(double a, double b);
+int getDateToBilanceFromCurrentMonthFinishDate();
 
 };
 

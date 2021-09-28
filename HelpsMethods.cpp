@@ -65,9 +65,9 @@ int HelpsMethods::ConvestationActualDateFromStringToInt() {
 
 int HelpsMethods::ConvestationChoosedDateFromStringToInt() {
 
-    string date = "";
+    string date;
     string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, oldDate, YY, DD, MM;
-    int newDate = 0;
+    int newDate;
     char sign;
 
     cout << "Please insert date in YYYY-MM-DD format! " << endl;
@@ -87,39 +87,42 @@ int HelpsMethods::ConvestationChoosedDateFromStringToInt() {
     MM = dateM+dateMM;
     DD = dateD+dateDD;
 
+ if(date.length() !=10 || date[4]!= '-' || date[7]!='-') {
+        cout << "Date is not correct, program will close " << endl;
+        Sleep(1000);
+        exit(0);
 
-
-    if(date.length() !=10 || date[4]!= '-' || date[7]!='-') {
-        cout << "Date is not correct, please insert date again! " << endl;
-        ConvestationChoosedDateFromStringToInt();
     }
     if(StringNaInt(YY)%4 != 0 && StringNaInt(dateM)==0 && StringNaInt(dateMM)==2 && StringNaInt(DD)>=29) {
-        cout << "Date is not correct, please insert date again! " << endl;
-        ConvestationChoosedDateFromStringToInt();
+        cout << "Date is not correct, program will close " << endl;
+        Sleep(1000);
+        exit(0);;
     }
     if(StringNaInt(dateY)<2) {
-        cout << "Date is not correct, please insert date again! " << endl;
-        ConvestationChoosedDateFromStringToInt();
+        cout << "Date is not correct, program will close " << endl;
+        Sleep(1000);
+        exit(0);
     }
     if((StringNaInt(dateM) == 1 && StringNaInt(dateMM)>2) || StringNaInt(dateM)>1) {
-        cout << "Date is not correct, please insert date again! " << endl;
-        ConvestationChoosedDateFromStringToInt();
+        cout << "Date is not correct, program will close " << endl;
+        Sleep(1000);
+        exit(0);
     }
 
     if(StringNaInt(dateM)==0 && (StringNaInt(dateMM)==4 || StringNaInt(dateMM)==6 || StringNaInt(dateMM)==9 || StringNaInt(MM)==11) && StringNaInt(DD)==31) {
-        cout << "Date is not correct, please insert date again! " << endl;
-        ConvestationChoosedDateFromStringToInt();
+        cout << "Date is not correct, program will close " << endl;
+        Sleep(1000);
+        exit(0);
     }
     if((StringNaInt(dateD)>3) || (StringNaInt(dateD)==3 && StringNaInt(dateDD)>1)) {
-        cout << "Date is not correct, please insert date again! " << endl;
-        ConvestationChoosedDateFromStringToInt();
+        cout << "Date is not correct, program will close " << endl;
+        Sleep(1000);
+        exit(0);
     }
-
-
 
     oldDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+dateD+dateDD;
     newDate = StringNaInt(oldDate);
-    //cout << newDate << endl;
+    cout << newDate << endl;
 
 
     return newDate;
@@ -264,6 +267,63 @@ int HelpsMethods::backActualDateOneMonth(){
     }
 
 
+   if(MM == "01" || MM == "03" || MM == "05" || MM == "07" || MM == "08" || MM == "10" ||  MM == "12" ){
+        DD = "31";
+   }else if(MM == "02"){
+        DD = "28";
+   }else{
+        DD = "30";
+   }
+
+
+    strFinishDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+DD;
+    finishDate = StringNaInt(strFinishDate);
+
+
+
+    return finishDate;
+}
+
+int HelpsMethods::getDateToBilanceFromCurrentMonthFinishDate(){
+string date;
+   int finishDate;
+   string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
+   int newMM;
+
+
+   date = intNaString(ConvestationActualDateFromStringToInt());
+
+   dateY = date[0];
+    dateYY = date[1];
+    dateYYY = date[2];
+    dateYYYY = date[3];
+    dateM = date[4];
+    dateMM = date[5];
+    dateD = date[6];
+    dateDD = date[7];
+
+    YY = dateY+dateYY+dateYYY+dateYYYY;
+    MM = dateM+dateMM;
+    DD = dateD+dateDD;
+
+    newMM = StringNaInt(MM);
+    //cout << "Aktualnie sprawdzany miesiac to: " << newMM << endl;
+    system("pause");
+
+    if(newMM == 1){
+        newMM = 12;
+    }
+
+    if(newMM<10){
+    dateMM = intNaString(newMM);
+    dateM = "0";
+    MM = dateM+dateMM;
+    }else{
+    MM = intNaString(newMM);
+    //cout << "MM " << MM << endl;
+    }
+
+
     if(StringNaInt(dateM)==0 && (StringNaInt(dateMM)==4 || StringNaInt(dateMM)==6 || StringNaInt(dateMM)==9 || StringNaInt(MM)==11)){
    // cout << "jestem tutaj 1" << endl;
         dateD = "3";
@@ -294,3 +354,4 @@ results = a-b;
 return results;
 
 }
+
