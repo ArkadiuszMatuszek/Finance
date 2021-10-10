@@ -202,7 +202,7 @@
 1632661580 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\users.h
 	<iostream>
 
-1632863172 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.h
+1633898521 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.h
 	<iostream>
 	<windows.h>
 	<winbase.h>
@@ -275,7 +275,7 @@
 	"FileWithIncomes.h"
 	"UsersMenager.h"
 
-1632863293 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.cpp
+1633901188 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\helpsmethods.cpp
 	"Helpsmethods.h"
 
 1632689407 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\incomes.cpp
@@ -304,7 +304,7 @@
 1632661580 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\users.cpp
 	"Users.h"
 
-1632774834 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\usersmenager.cpp
+1633900959 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\usersmenager.cpp
 	"UsersMenager.h"
 
 1632668604 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transcation.cpp
@@ -313,7 +313,7 @@
 1632668604 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transcation.h
 	<iostream>
 
-1632864326 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.cpp
+1633901050 source:c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.cpp
 	"TransactionMenager.h"
 
 1632864283 c:\users\48501\desktop\c++\pomagamy zapanowaæ nad finansami i spe³niaæ marzenia\finance-master\transactionmenager.h

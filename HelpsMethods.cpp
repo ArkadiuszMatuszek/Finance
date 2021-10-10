@@ -58,6 +58,7 @@ int HelpsMethods::ConvestationActualDateFromStringToInt() {
 
     date = dateY+dateM+dateD;
     newDate = StringNaInt(date);
+    system("cls");
 
     return newDate;
 
@@ -65,75 +66,70 @@ int HelpsMethods::ConvestationActualDateFromStringToInt() {
 
 int HelpsMethods::ConvestationChoosedDateFromStringToInt() {
 
-    string date;
+    string date = "";
     string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, oldDate, YY, DD, MM;
     int newDate;
     char sign;
 
-    cout << "Please insert date in YYYY-MM-DD format! " << endl;
-    cin >> date;
-
-    dateY = date[0];
-    dateYY = date[1];
-    dateYYY = date[2];
-    dateYYYY = date[3];
-    dateM = date[5];
-    dateMM = date[6];
-    dateD = date[8];
-    dateDD = date[9];
 
 
-    YY = dateY+dateYY+dateYYY+dateYYYY;
-    MM = dateM+dateMM;
-    DD = dateD+dateDD;
+    for(int i=0; i<=4; i++) {
+        system("cls");
+        cout << "Urgent, you have only " << 3-i << " trials to type correct date! Please be careful!" << endl;
+        cout << i << endl;
+        if(i == 3) {
+            cout << "You typed 3 times wrong dates, program will close" << endl;
+            exit(0);
+        }
+        cout << "Please insert date in YYYY-MM-DD format! " << endl;
+        cin >> date;
 
- if(date.length() !=10 || date[4]!= '-' || date[7]!='-') {
-        cout << "Date is not correct, program will close " << endl;
-        Sleep(1000);
-        exit(0);
 
-    }
-    if(StringNaInt(YY)%4 != 0 && StringNaInt(dateM)==0 && StringNaInt(dateMM)==2 && StringNaInt(DD)>=29) {
-        cout << "Date is not correct, program will close " << endl;
-        Sleep(1000);
-        exit(0);;
-    }
-    if(StringNaInt(dateY)<2) {
-        cout << "Date is not correct, program will close " << endl;
-        Sleep(1000);
-        exit(0);
-    }
-    if((StringNaInt(dateM) == 1 && StringNaInt(dateMM)>2) || StringNaInt(dateM)>1) {
-        cout << "Date is not correct, program will close " << endl;
-        Sleep(1000);
-        exit(0);
-    }
 
-    if(StringNaInt(dateM)==0 && (StringNaInt(dateMM)==4 || StringNaInt(dateMM)==6 || StringNaInt(dateMM)==9 || StringNaInt(MM)==11) && StringNaInt(DD)==31) {
-        cout << "Date is not correct, program will close " << endl;
-        Sleep(1000);
-        exit(0);
-    }
-    if((StringNaInt(dateD)>3) || (StringNaInt(dateD)==3 && StringNaInt(dateDD)>1)) {
-        cout << "Date is not correct, program will close " << endl;
-        Sleep(1000);
-        exit(0);
+        dateY = date[0];
+        dateYY = date[1];
+        dateYYY = date[2];
+        dateYYYY = date[3];
+        dateM = date[5];
+        dateMM = date[6];
+        dateD = date[8];
+        dateDD = date[9];
+
+
+        YY = dateY+dateYY+dateYYY+dateYYYY;
+        MM = dateM+dateMM;
+        DD = dateD+dateDD;
+
+        if((date.length() !=10 || date[4]!= '-' || date[7]!='-')
+                ||(StringNaInt(YY)%4 != 0 && StringNaInt(dateM)==0 && StringNaInt(dateMM)==2 && StringNaInt(DD)>=29)
+                || (StringNaInt(dateY)<2)
+                || ((StringNaInt(dateM) == 1 && StringNaInt(dateMM)>2) || StringNaInt(dateM)>1)
+                || (StringNaInt(dateM)==0 && (StringNaInt(dateMM)==4 || StringNaInt(dateMM)==6 || StringNaInt(dateMM)==9 || StringNaInt(MM)==11) && StringNaInt(DD)==31)
+                || ((StringNaInt(dateD)>3) || (StringNaInt(dateD)==3 && StringNaInt(dateDD)>1))) {
+            cout << "Date is not correct, try again"  << endl;
+            Sleep(1000);
+        } else {
+            cout << "Date is correct " << endl;
+            system("cls");
+            break;
+        }
     }
 
     oldDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+dateD+dateDD;
     newDate = StringNaInt(oldDate);
-    cout << newDate << endl;
-
+    system("cls");
 
     return newDate;
+
+
+
+
 
 }
 
 string HelpsMethods::changeCommaToDot(string amount) {
 
-    //cout << "amount " << amount << endl;
     string newAmount;
-
 
     for(int i=0; i<amount.length()-1; i++) {
         if(amount[i]==',') {
@@ -146,14 +142,14 @@ string HelpsMethods::changeCommaToDot(string amount) {
 
 int HelpsMethods::getDateToBilanceFromCurentMonth() {
 
-   string date;
-   int startDate, finishDate;
-   string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate ;
+    string date;
+    int startDate, finishDate;
+    string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate ;
 
 
-   date = intNaString(ConvestationActualDateFromStringToInt());
+    date = intNaString(ConvestationActualDateFromStringToInt());
 
-   dateY = date[0];
+    dateY = date[0];
     dateYY = date[1];
     dateYYY = date[2];
     dateYYYY = date[3];
@@ -169,24 +165,22 @@ int HelpsMethods::getDateToBilanceFromCurentMonth() {
 
     strFinishDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+dateD+dateDD;
     finishDate = StringNaInt(strFinishDate);
-
-   // cout << "StartDate: " <<  startDate << endl;
-    //cout << "FinishDate: " << finishDate << endl;
-    system("pause");
+    system("cls");
 
     return finishDate;
 }
 
-int HelpsMethods::getDateToBilanceFromPreviouslyMonth(){
+int HelpsMethods::getDateToBilanceFromPreviouslyMonth() {
     string date;
-   int finishDate;
-   string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
-   int newMM;
+    int finishDate;
+    string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
+    int newMM;
 
+    system("cls");
 
-   date = intNaString(ConvestationActualDateFromStringToInt());
+    date = intNaString(ConvestationActualDateFromStringToInt());
 
-   dateY = date[0];
+    dateY = date[0];
     dateYY = date[1];
     dateYYY = date[2];
     dateYYYY = date[3];
@@ -200,19 +194,17 @@ int HelpsMethods::getDateToBilanceFromPreviouslyMonth(){
     DD = dateD+dateDD;
 
     newMM = StringNaInt(MM)-1;
-    //cout << "Aktualnie sprawdzany miesiac to: " << newMM << endl;
-    system("pause");
 
-    if(newMM == 1){
+    if(newMM == 1) {
         newMM = 12;
     }
 
-    if(newMM<10){
-    dateMM = intNaString(newMM);
-    dateM = "0";
-    MM = dateM+dateMM;
-    }else{
-    MM = intNaString(newMM);
+    if(newMM<10) {
+        dateMM = intNaString(newMM);
+        dateM = "0";
+        MM = dateM+dateMM;
+    } else {
+        MM = intNaString(newMM);
     }
 
     dateD = "0";
@@ -220,23 +212,25 @@ int HelpsMethods::getDateToBilanceFromPreviouslyMonth(){
 
     strFinishDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+dateD+dateDD;
     finishDate = StringNaInt(strFinishDate);
+    system("cls");
 
 
 
     return finishDate;
 }
 
-int HelpsMethods::backActualDateOneMonth(){
+int HelpsMethods::backActualDateOneMonth() {
 
-   string date;
-   int finishDate;
-   string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
-   int newMM;
+    string date;
+    int finishDate;
+    string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
+    int newMM;
 
+    system("cls");
 
-   date = intNaString(ConvestationActualDateFromStringToInt());
+    date = intNaString(ConvestationActualDateFromStringToInt());
 
-   dateY = date[0];
+    dateY = date[0];
     dateYY = date[1];
     dateYYY = date[2];
     dateYYYY = date[3];
@@ -250,50 +244,49 @@ int HelpsMethods::backActualDateOneMonth(){
     DD = dateD+dateDD;
 
     newMM = StringNaInt(MM)-1;
-    //cout << "Aktualnie sprawdzany miesiac to: " << newMM << endl;
-    system("pause");
 
-    if(newMM == 1){
+
+    if(newMM == 1) {
         newMM = 12;
     }
 
-    if(newMM<10){
-    dateMM = intNaString(newMM);
-    dateM = "0";
-    MM = dateM+dateMM;
-    }else{
-    MM = intNaString(newMM);
-    //cout << "MM " << MM << endl;
+    if(newMM<10) {
+        dateMM = intNaString(newMM);
+        dateM = "0";
+        MM = dateM+dateMM;
+    } else {
+        MM = intNaString(newMM);
     }
 
 
-   if(MM == "01" || MM == "03" || MM == "05" || MM == "07" || MM == "08" || MM == "10" ||  MM == "12" ){
+    if(MM == "01" || MM == "03" || MM == "05" || MM == "07" || MM == "08" || MM == "10" ||  MM == "12" ) {
         DD = "31";
-   }else if(MM == "02"){
+    } else if(MM == "02") {
         DD = "28";
-   }else{
+    } else {
         DD = "30";
-   }
+    }
 
 
     strFinishDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+DD;
     finishDate = StringNaInt(strFinishDate);
+    system("cls");
 
 
 
     return finishDate;
 }
 
-int HelpsMethods::getDateToBilanceFromCurrentMonthFinishDate(){
-string date;
-   int finishDate;
-   string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
-   int newMM;
+int HelpsMethods::getDateToBilanceFromCurrentMonthFinishDate() {
+    string date;
+    int finishDate;
+    string dateY, dateYY, dateYYY, dateYYYY, dateM, dateMM, dateD, dateDD, strFinishDate, YY, MM, DD;
+    int newMM;
 
+    system("cls");
+    date = intNaString(ConvestationActualDateFromStringToInt());
 
-   date = intNaString(ConvestationActualDateFromStringToInt());
-
-   dateY = date[0];
+    dateY = date[0];
     dateYY = date[1];
     dateYYY = date[2];
     dateYYYY = date[3];
@@ -307,51 +300,46 @@ string date;
     DD = dateD+dateDD;
 
     newMM = StringNaInt(MM);
-    //cout << "Aktualnie sprawdzany miesiac to: " << newMM << endl;
-    system("pause");
-
-    if(newMM == 1){
+    if(newMM == 1) {
         newMM = 12;
     }
 
-    if(newMM<10){
-    dateMM = intNaString(newMM);
-    dateM = "0";
-    MM = dateM+dateMM;
-    }else{
-    MM = intNaString(newMM);
-    //cout << "MM " << MM << endl;
+    if(newMM<10) {
+        dateMM = intNaString(newMM);
+        dateM = "0";
+        MM = dateM+dateMM;
+    } else {
+        MM = intNaString(newMM);
     }
 
 
-    if(StringNaInt(dateM)==0 && (StringNaInt(dateMM)==4 || StringNaInt(dateMM)==6 || StringNaInt(dateMM)==9 || StringNaInt(MM)==11)){
-   // cout << "jestem tutaj 1" << endl;
+    if(StringNaInt(dateM)==0 && (StringNaInt(dateMM)==4 || StringNaInt(dateMM)==6 || StringNaInt(dateMM)==9 || StringNaInt(MM)==11)) {
         dateD = "3";
         dateDD = "1";
 
-    }else{
-     //   cout << "jestem tutaj 2" << endl;
-    dateD = "3";
-    dateDD = "0";
+    } else {
+        dateD = "3";
+        dateDD = "0";
 
     }
 
 
     strFinishDate = dateY+dateYY+dateYYY+dateYYYY+dateM+dateMM+dateD+dateDD;
     finishDate = StringNaInt(strFinishDate);
+    system("cls");
 
 
 
     return finishDate;
 }
 
- double HelpsMethods::IncomesMinusExpenses(double a, double b){
+double HelpsMethods::IncomesMinusExpenses(double a, double b) {
 
-double results = 0;
+    double results = 0;
 
-results = a-b;
+    results = a-b;
 
-return results;
+    return results;
 
 }
 

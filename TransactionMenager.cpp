@@ -13,8 +13,7 @@ void TransactionMenager::AddNewExpenses() {
     string item, amount;
     Expense expenses;
 
-    cout << LOGGED_USER_ID << endl;
-    system("pause");
+    system("cls");
 
     cout << "1. Expenses from today ? " << endl;
     cout << "2. Expenses from another day " << endl;
@@ -46,6 +45,7 @@ void TransactionMenager::AddNewExpenses() {
 
 
     fileWithExpenses.addeExpensesToFile(expenses);
+    system("cls");
 
 }
 
@@ -54,7 +54,7 @@ void TransactionMenager::addIncomes() {
     string item, amount;
     Incomes incomes;
 
-
+system("cls");
 
 
     cout << "1. Incomes from today ? " << endl;
@@ -86,6 +86,7 @@ void TransactionMenager::addIncomes() {
 
 
     fileWithIncomes.addIncomesToFile(incomes);
+    system("cls");
 
 }
 
@@ -125,6 +126,7 @@ void TransactionMenager::getBallanceFromCurrentMonth() {
 
     cout << "IncomesMinusExpenses: " << IncomesMinusExpenses << endl;
     system("pause");
+    system("cls");
 
 
 }
@@ -149,6 +151,7 @@ void TransactionMenager::getBalanceFromLastMonth() {
 
     cout << "IncomesMinusExpenses: " << IncomesMinusExpenses << endl;
     system("pause");
+    system("cls");
 
 
 
@@ -177,6 +180,7 @@ void TransactionMenager::getBalanceFromPeriod() {
 
     cout << "IncomesMinusExpenses: " << IncomesMinusExpenses << endl;
     system("pause");
+    system("cls");
 
 }
 

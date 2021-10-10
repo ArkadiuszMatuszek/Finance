@@ -40,11 +40,8 @@ Users UserMenager::SetDateForNewUser() {
             Sleep(1000);
             system("cls");
             userRegistation();
-        }
-
-        itr++;
-    }
-    cout << "Please, insert your password " << endl;
+        }else{
+        cout << "Please, insert your password " << endl;
     cin >> password;
     users.setPassword(password);
 
@@ -57,6 +54,14 @@ Users UserMenager::SetDateForNewUser() {
     users.setSurname(surname);
 
     cout << "Your account was created" << endl;
+    Sleep(1000);
+    system("cls");
+
+        }
+   break;
+
+    }
+
 
     return users;
 
